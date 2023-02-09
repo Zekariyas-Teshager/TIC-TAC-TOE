@@ -10,7 +10,6 @@ const oCounter = document.getElementById('o-counter')
 var xwins=0
 var owins=0
 const resetButton = document.getElementById('resetButton')
-// var select = document.getElementById('player')
 const winning_combination = [
     [0,1,2],
     [3,4,5],
@@ -32,15 +31,6 @@ restartButton.addEventListener('click', startGame)
 startGame()
 
 function startGame(){
-    // select.addEventListener('change',() => {
-    //     if(select.value=="O"){
-    //         circleTurn = true
-    //         setHoverClass()
-    //     }else{
-    //         circleTurn = false
-    //         setHoverClass()
-    //     }
-    // })
     circleTurn = false
     cellElements.forEach(cell => {
         cell.style.cursor='pointer'
