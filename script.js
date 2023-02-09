@@ -43,6 +43,8 @@ function startGame(){
     // })
     circleTurn = false
     cellElements.forEach(cell => {
+        cell.style.cursor='pointer'
+
         cell.classList.remove(X_CLASS)
         cell.classList.remove(CIRCLE_CLASS)
         cell.removeEventListener('click', handelClick)
@@ -67,6 +69,7 @@ function handelClick(e){
 }
 function placeMark(cell, currentClass){
     cell.classList.add(currentClass)
+    cell.style.cursor='not-allowed'
 }
 function swapTurn (){
     circleTurn = !circleTurn
@@ -104,9 +107,12 @@ function endGame(draw){
         }
         xCounter.innerText= "X: "+xwins
         oCounter.innerText= "O: "+owins
+        board.classList.remove(CIRCLE_CLASS)
+        board.classList.remove(X_CLASS)
     }
     winningMessageElement.classList.add('show')
     cellElements.forEach(cell => {
         cell.removeEventListener('click', handelClick)
+        cell.style.cursor='not-allowed'
     })
 }
